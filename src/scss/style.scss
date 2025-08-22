@@ -345,3 +345,45 @@ input {
 footer {
   padding-bottom: 200px;
 }
+
+.d-flex {
+  margin-top: 50px;
+  gap: 30px;
+}
+
+/* стилі для картинок */
+.brands {
+  width: 100px;
+  height: auto;
+  position: relative;
+  animation: fallDown 6s ease-in-out infinite alternate;
+}
+
+/* трохи різного часу для кожного, щоб не падали синхронно */
+.brands:nth-child(1) {
+  animation-delay: 0s;
+}
+.brands:nth-child(2) {
+  animation-delay: 1s;
+}
+.brands:nth-child(3) {
+  animation-delay: 2s;
+}
+
+/* ключові кадри падіння */
+@keyframes fallDown {
+  0% {
+    top: -150px;       /* початкова позиція над блоком */
+    opacity: 0;
+    transform: rotate(0deg) scale(0.8);
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    top: 150px;        /* кінцева позиція нижче */
+    opacity:1;
+    transform: rotate(360deg) scale(1);
+  }
+}

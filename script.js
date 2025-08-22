@@ -32,3 +32,17 @@ slider.addEventListener('mouseenter', () => clearInterval(autoScroll));
 slider.addEventListener('mouseleave', () => {
     autoScroll = setInterval(scrollNext, 2000);
 });
+function updateTransition() {
+    let elements = document.querySelectorAll(".box, .box1");
+
+    elements.forEach(el => {
+        if (el.classList.contains("box")) {
+            el.classList.replace("box", "box1");
+        } else {
+            el.classList.replace("box1", "box");
+        }
+    });
+}
+
+setInterval(updateTransition, 5000);
+
